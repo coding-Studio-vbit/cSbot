@@ -1,9 +1,9 @@
 {
-  "name": "cSbot",
-  "version": "1.0.0",
-  "description": "Bot for coding.Studio();",
+  "name": "A.L.A.N.",
+  "version": "2.0.0",
+  "description": "Cute bot for coding.Studio();",
   "main": "bot.js",
-  "author": "Kaustubh",
+  "author": "Akylus",
   "dependencies": {
     "codeforces-api": "^1.0.3",
     "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
