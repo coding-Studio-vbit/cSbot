@@ -195,9 +195,9 @@ client.on('message', message=> {
     {
         message.reply('don\'t insult bhadwe, I\'m more productive than you');
     } 
-    else if(message.content.includes('hi'))
+    else if(message.content.includes('hiii'))
     {
-    message.reply('Hi niBBa');
+    message.reply('you\'re texting a bot :expressionless: get a gf newb');
     }
     else if(message.content.includes('hello'))
     {
@@ -208,10 +208,10 @@ client.on('message', message=> {
     message.reply('Hello brah');
     }
     else if(message.content.includes('hii')){
-       message.reply('how you doin?');
+       message.reply('hi, how you doin?');
     }
-else if(message.content.includes('hiii')){
-    message.reply('btw, you\'re texting a bot :expressionless: get a gf newb');
+else if(message.content.includes('hi')){
+    message.reply('hey!');
     }
 else if(message.content.includes('hitler')){
     message.reply('nein hitler');
@@ -243,7 +243,7 @@ else if(message.content.includes('lame')){
     else if(message.content.includes('who are you')){
     message.reply('I\'m a perfectly coded, badly indentated bot');}
    else {
-    message.reply('I\'m a bot, You\'d think I\'d get that?');
+    message.reply('I\'m a bot, You think I\'d get that?');
 
    }
 }
