@@ -4,7 +4,7 @@ const auth = require('./auth.json');
 const cf = require('codeforces-api');
 var to_human = require ('seconds-to-human');
 var moment = require('moment');
-
+//Pull
 
 
 client.on('ready', () => {
