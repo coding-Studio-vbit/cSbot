@@ -13,21 +13,26 @@ cf.setApis('ce94dd676da629401f639a69c9b027e4bdd9ce8b', 'b3dc63006c8192c707d46542
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('96694c14f44e4ceda4574ff16e0fa081');
 let newsi = 0;
-
+var chkrcontest;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
+
+
 //----------------------------INTRO--------------------------------------------------------
 client.on('message', message => {
+    message.content = message.content.toLowerCase();
   if (message.content === '!intro') {
-    message.reply('Hey there! I\'m the Bot for coding.Studio(); Ver: v2.2.1\n' 
+    console.log(message.channel.id);
+    message.reply('Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v2.2.5**\n----------------------------------------------------\n' 
             + "`intro`   : Gives an intro\n"
-            + "`insult` : basic insult on cS\n"
+            + "`insult` : basic insult on yourself\n"
             + "`myavatar` : Image of your avatar (why do you even need this?)\n"
             + "`roast` : roast a friend\n"
-            + "`payrespects` : Tag a member to pay him respects\n-------------------------------\n"
+            + "`payrespects` : Tag a member to pay him respects\n----------------------------------------------------\n"
             + "`techtoday` : Top news in the Tech world today (beta)\n"
             + "`progboard` : Solved Problems Leaderboard\n"
             + "`cfboard` : Codeforces Rating Leaderboard\n"
@@ -343,14 +348,6 @@ client.on('message', message => {
         setTimeout(function(){ message.reply(`Here's your reminder: ${msg}`); }, time);    
     }
 
-});
-
-
-
-
-
-
-
 
 
 //----------------------------INSULT--------------------------------------------------------
@@ -362,7 +359,7 @@ let roasts = ["You're so Ugly, hello kitty said goodbye to you",
                 "As an outsider, what do you think of the human race?"];
 
 let insults = ["public void youTryToGetGirlfriend()\n{\n    throw new TooUglyException()\n}",
-                "Bool SadAndAlone=1;\nwhile (SadAndAlone==1)\n{\n\tFap();\n\tCry();\n\tAge();\n}",
+                "Bool SadAndAlone=1;\nwhile (SadAndAlone==1)\n{\n\tCry();\n\tAge();\n}",
                 "I bet the number of text editors you have is greater than the number of girls that crush on you.",
                 "You are as useless as a semicolon in Python.",
                 "Maybe you should write a program once in a while rather than wasting your time with a BOT. OOF.",
@@ -429,7 +426,15 @@ client.on('message', message => {
 
     else if (message.content.startsWith('!payrespects')) {
         let user = message.mentions.users.first();
-        message.channel.send(` ${user}, here's an F for you \n _____ _ __ _ __ _ __ __ ___ _ _ _ _ ___\n|\n|\n|\n| _____ _ __ _ __ _ __ __ ___ _ _ _ _ \n|\n|\n|\n|  `);
+        if (user != '<@590805821445898260>'){
+            console.log(` ${user}`);
+            message.channel.send(` ${user}, here's an F for you \n _____ _ __ _ __ _ __ __ ___ _ _ _ _ ___\n|\n|\n|\n| _____ _ __ _ __ _ __ __ ___ _ _ _ _ \n|\n|\n|\n|  `);
+        }
+        else{
+            console.log(` ${user}`);
+            message.channel.send(` Here's an F for me :pensive: \n _____ _ __ _ __ _ __ __ ___ _ _ _ _ ___\n|\n|\n|\n| _____ _ __ _ __ _ __ __ ___ _ _ _ _ \n|\n|\n|\n|  `);
+        }
+        return;
     }
 });
 
@@ -459,17 +464,17 @@ client.on('message', message => {
 
 
   if (message.content.startsWith('!roast')) {
-    if (message.author.bot){
-        message.channel.send('Won\'t roast myself, fool. Goteeeeeem :dab:');
-        return;
-    }
-
     const user = message.mentions.users.first();
-    if (user) {
+
+    if (user == '<@590805821445898260>'){
+            message.reply("Nice try, but I'm smarter now.");
+    }
+    else if (user) {
       
       const member = message.guild.member(user);
       
       if (member) {
+        console.log(user);
         message.channel.send(` ${user} `+ roasts[randi]).catch(err => {
           message.channel.send('I was unable to roast the member');
           console.error(err);
@@ -514,7 +519,7 @@ client.on('message', message=> {
         if(message.channel.name !== 'random')
             message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
         else
-            message.reply('don\'t insult bhadwe, I\'m more productive than you');
+            message.reply('don\'t insult, I\'m more productive than you');
 
   
 
@@ -534,6 +539,10 @@ else if(message.content.includes('what\'s up')){
     message.reply('ceiling');}
 else if(message.content.includes('wassup')){
     message.reply('sky');}
+else if(message.content.includes('!payrespects')){
+    return;}
+else if(message.content.includes('!roast')){
+    return;}
 else if(message.content.includes('how are you') ||
         message.content.includes('how r u') ||
         message.content.includes('how\'re you') ||
