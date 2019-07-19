@@ -27,7 +27,7 @@ client.on('message', message => {
     message.content = message.content.toLowerCase();
   if (message.content === '!intro') {
     console.log(message.channel.id);
-    message.reply('Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v2.2.5**\n----------------------------------------------------\n' 
+    message.reply('Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v2.3.5**\n----------------------------------------------------\n' 
             + "`intro`   : Gives an intro\n"
             + "`insult` : basic insult on yourself\n"
             + "`myavatar` : Image of your avatar (why do you even need this?)\n"
@@ -38,6 +38,7 @@ client.on('message', message => {
             + "`cfboard` : Codeforces Rating Leaderboard\n"
             + "`getproblem` : Can be used to get the CF link to a problem (Ex: !getproblem 122 A)\n"
             + "`newproblem` : Can be used to get a random problem of chosen difficulty (Ex: !newproblem B)\n"
+            + "`xtreme` : Can be used to give a random problem of chosen difficulty to a random person (Ex: !xtreme B)\n"
             + "`newcontest` : Gives info about the latest codeforces contest\n"
             + "`remindme` : Gives you a reminder after the said time. (Ex: !remindme 2 hours Eat food)\n");
   }
@@ -278,6 +279,49 @@ client.on('message', message => {
         message.channel.send(finalmsg);    
     }
 
+    //-----------------------------------------XTREME Prep-----------------------------------------------------------------------
+
+    else if (message.content.startsWith('!xtreme')) {
+        prefix = '!xtreme'
+        let probmax = 1159;
+        let probmin = 1;
+        let  membarray = [];
+        const arg = message.content.slice(prefix.length).split(' ');
+        let finalmsg = '';
+        let members = message.guild.members;
+        members.forEach((member, key) => {
+            if(member.id != '590805821445898260' || member.id != '537554206899437579')      //This is ALAN, hence skip
+                membarray.push(member.id)
+        });
+        // console.log(membarray);
+        var probsolver = membarray[Math.floor(Math.random()*membarray.length)];
+
+        let randi = 0;
+        if(arg.length < 3)
+            if(arg.length < 2)
+                finalmsg = "\nEnter a difficulty level you want to try and try again.";
+
+            else{
+                message.channel.send(`<@${probsolver}> , \`\`\`You have been (randomly) selected as the solver for this problem.\nYou have exactly 20 minutes. All the best!\n\`\`\``);    
+                finalmsg = "\nHere's the problem for you to try:";
+            }
+
+        else
+            finalmsg = "\nHere's a few problems for you to try:";
+        for(i=1;i<arg.length;i++){
+            arg[i] = arg[i].toLowerCase();
+            //console.log(arg[i]);
+            randi = Math.floor(Math.random()*(probmax-probmin+1)+probmin);
+            if(arg[i] === 'a' || arg[i] === 'b' || arg[i] === 'c' || arg[i] === 'd' || arg[i] === 'e')
+                finalmsg = finalmsg + `\nhttp://codeforces.com/problemset/problem/${randi}/${arg[i].toUpperCase()}/`;
+            else
+                finalmsg = finalmsg + `\nhttp://codeforces.com/problemset/problem/${randi}/E/\n(What did you even type?)`;
+
+        }
+  
+        message.channel.send(finalmsg);    
+    }    
+
     //-----------------------------------------Get a specific problem------------------------------------------------------------
 
     else if (message.content.startsWith('!getproblem')) {
@@ -348,6 +392,14 @@ client.on('message', message => {
         setTimeout(function(){ message.reply(`Here's your reminder: ${msg}`); }, time);    
     }
 
+});
+
+
+
+
+
+
+
 
 
 //----------------------------INSULT--------------------------------------------------------
@@ -359,7 +411,7 @@ let roasts = ["You're so Ugly, hello kitty said goodbye to you",
                 "As an outsider, what do you think of the human race?"];
 
 let insults = ["public void youTryToGetGirlfriend()\n{\n    throw new TooUglyException()\n}",
-                "Bool SadAndAlone=1;\nwhile (SadAndAlone==1)\n{\n\tCry();\n\tAge();\n}",
+                "Bool SadAndAlone=1;\nwhile (SadAndAlone==1)\n{\n\tFap();\n\tCry();\n\tAge();\n}",
                 "I bet the number of text editors you have is greater than the number of girls that crush on you.",
                 "You are as useless as a semicolon in Python.",
                 "Maybe you should write a program once in a while rather than wasting your time with a BOT. OOF.",
@@ -519,7 +571,7 @@ client.on('message', message=> {
         if(message.channel.name !== 'random')
             message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
         else
-            message.reply('don\'t insult, I\'m more productive than you');
+            message.reply('don\'t insult bhadwe, I\'m more productive than you');
 
   
 
