@@ -408,19 +408,6 @@ client.on('message', message => {
     if (message.content === '!myavatar')
         message.channel.send("\n" + message.author.avatarURL);
 
-    else if (message.content === '!enlargePP'){
-        if(message.channel.name !== 'random')
-            message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
-        else
-            message.channel.send("8=============D");
-    }
-
-    else if (message.content === '!cum')
-        if(message.channel.name !== 'random')
-            message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
-        else
-            message.channel.send("8=============D :sweat_drops: ");
-
     else if (message.content === '!yay')
         message.channel.send("Yayyy, you did it! :dab:");
 
