@@ -551,37 +551,18 @@ client.on('message', message=> {
         if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     if(message.isMentioned(client.user) && message.content.includes('love you'))
-        message.reply('No homo nigga');
+        message.reply('No homo');
 
-    else  if(message.content.includes('bich') ||
-            message.content.includes('FU') ||
-            message.content.includes('bitch') ||
-            message.content.includes('bhadve') ||
-            message.content.includes('bhadwe') ||
-            message.content.includes('lanje') ||
-            message.content.includes('useless') ||
-            message.content.includes('fuck') ||
+    else  if(message.content.includes('useless') ||
             message.content.includes('lame') ||
-            message.content.includes('gay bot') ||
             message.content.includes('retard') ||
             message.content.includes('stupid') ||
             message.content.includes('idiot') ||
-            message.content.includes('frick') ||
-            message.content.includes('stupid bot'))
+            message.content.includes('waste bot'))
         if(message.channel.name !== 'random')
             message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
         else
             message.reply('don\'t insult bhadwe, I\'m more productive than you');
-
-  
-
-else if(message.content.includes('hitler') ||
-        message.content.includes('jew') ||
-        message.content.includes('jewish'))
-        if(message.channel.name !== 'random')
-            message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
-        else
-            message.reply('Nein Hitler');
 
 else if(message.content.includes('sup')){
     message.reply('fan');}
