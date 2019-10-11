@@ -213,15 +213,6 @@ client.on('message', message=> {
 else if(message.content.includes('hiii')){
     message.reply('btw, you\'re texting a bot :expressionless: get a gf newb');
     }
-else if(message.content.includes('hitler')){
-    message.reply('nein hitler');
-     }
-else if(message.content.includes('jew')){
-    message.reply('nein hitler');
-     }
-else if(message.content.includes('jewish')){
-    message.reply('nein hitler');
-      }
 else if(message.content.includes("hiiii")){
     message.reply('what are you? a cringy 14 YO?');}
 else if(message.content.includes('sup')){
