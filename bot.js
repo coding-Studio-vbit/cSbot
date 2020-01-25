@@ -142,7 +142,7 @@ client.on('message', message => {
 
     }
         
-});
+
 
 
 
@@ -150,8 +150,8 @@ client.on('message', message => {
 //----------------------------NEW CONTEST--------------------------------------------------------
 
 
-client.on('message', message => {
-  if (message.content === '!newcontest') {
+
+  else if (message.content === '!newcontest') {
     var ff = cf.contest.list({ gym: 'false' },function (err, data) {
      
         if (err) {
