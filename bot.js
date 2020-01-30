@@ -610,13 +610,13 @@ client.on('message', message => {
             if (message.channel.name !== 'random')
                 message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
             else
-                message.reply('don\'t insult bhadwe, I\'m more productive than you');
+                message.reply('don\'t insult, I\'m more productive than you');
 
         else if (message.content.includes('sup')) {
             message.reply('fan');
         }
         else if (message.content.includes('hi')) {
-            message.reply('Hi nibba');
+            message.reply('Hello!');
         }
         else if (message.content.includes('what\'s up')) {
             message.reply('ceiling');
