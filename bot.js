@@ -7,6 +7,9 @@ const readline = require('readline');
 const { google } = require('googleapis');
 var to_human = require('seconds-to-human');
 var moment = require('moment');
+
+
+=======
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 const TOKEN_PATH = 'token.json';
 cf.setApis('ce94dd676da629401f639a69c9b027e4bdd9ce8b', 'b3dc63006c8192c707d46542fd27a5b81c6a05d3');
@@ -14,6 +17,7 @@ const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('96694c14f44e4ceda4574ff16e0fa081');
 let newsi = 0;
 var chkrcontest;
+
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
