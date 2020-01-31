@@ -160,41 +160,33 @@ client.on('message', message=> {
     if(message.content.includes('love you')){
         message.reply('No homo nigga');
     }
-    else  if(message.content.includes('bich'))
+    else  if(message.content.includes('bich') || message.content.includes('useless'))
     {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
-    }
-    else  if(message.content.includes('useless'))
-    {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
+        message.reply('don\'t insult, I\'m more productive than you');
     }
     else  if(message.content.includes('FU'))
     {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
+        message.reply('don\'t insult, I\'m more productive than you');
     }
     else  if(message.content.includes('fuck'))
     {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
+        message.reply('don\'t insult, I\'m more productive than you');
     }
     else  if(message.content.includes('retard'))
     {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
-    }
-    else  if(message.content.includes('stupid bot'))
-    {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
+        message.reply('don\'t insult, I\'m more productive than you');
     }
     else if(message.content.includes('stupid'))
     {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
+        message.reply('don\'t insult, I\'m more productive than you');
     }
     else if(message.content.includes('frick'))
     {
-        message.reply('don\'t insult bhadwe, I\'m more productive than you');
+        message.reply('don\'t insult, I\'m more productive than you');
     } 
     else if(message.content.includes('hi'))
     {
-    message.reply('Hi niBBa');
+    message.reply('Hi human');
     }
     else if(message.content.includes('hello'))
     {
