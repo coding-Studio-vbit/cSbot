@@ -7,6 +7,9 @@ const readline = require('readline');
 const { google } = require('googleapis');
 var to_human = require('seconds-to-human');
 var moment = require('moment');
+
+
+=======
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 const TOKEN_PATH = 'token.json';
 cf.setApis('ce94dd676da629401f639a69c9b027e4bdd9ce8b', 'b3dc63006c8192c707d46542fd27a5b81c6a05d3');
@@ -14,6 +17,7 @@ const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI('96694c14f44e4ceda4574ff16e0fa081');
 let newsi = 0;
 var chkrcontest;
+
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -144,8 +148,86 @@ client.on('message', message => {
 
 });
 
+//hiiii
 
 
+client.on('message', message=> {
+    message.content=message.content.toLowerCase();
+    let prefix = message.content;
+    if (message.isMentioned(client.user)) {
+        if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+    if(message.content.includes('love you')){
+        message.reply('No homo nigga');
+    }
+    else  if(message.content.includes('bich') || message.content.includes('useless'))
+    {
+        message.reply('don\'t insult, I\'m more productive than you');
+    }
+    else  if(message.content.includes('FU'))
+    {
+        message.reply('don\'t insult, I\'m more productive than you');
+    }
+    else  if(message.content.includes('fuck'))
+    {
+        message.reply('don\'t insult, I\'m more productive than you');
+    }
+    else  if(message.content.includes('retard'))
+    {
+        message.reply('don\'t insult, I\'m more productive than you');
+    }
+    else if(message.content.includes('stupid'))
+    {
+        message.reply('don\'t insult, I\'m more productive than you');
+    }
+    else if(message.content.includes('frick'))
+    {
+        message.reply('don\'t insult, I\'m more productive than you');
+    } 
+    else if(message.content.includes('hi'))
+    {
+    message.reply('Hi human');
+    }
+    else if(message.content.includes('hello'))
+    {
+    message.reply('Hello brah');
+    }
+    else if(message.content.includes('Hello'))
+    {
+    message.reply('Hello brah');
+    }
+    else if(message.content.includes('hii')){
+       message.reply('how you doin?');
+    }
+else if(message.content.includes('hiii')){
+    message.reply('btw, you\'re texting a bot :expressionless: get a gf newb');
+    }
+else if(message.content.includes("hiiii")){
+    message.reply('what are you? a cringy 14 YO?');}
+else if(message.content.includes('sup')){
+    message.reply('fan');}
+else if(message.content.includes('what\'s up')){
+    message.reply('ceiling');}
+else if(message.content.includes('wassup')){
+    message.reply('sky');}
+else if(message.content.includes('lame')){
+    message.reply('not lamer than you');}
+ else  if(message.content.includes('gay bot')){
+    message.reply('no u');}
+ else if(message.content.includes('how are you')){
+    message.reply('perfectly coded,badly indentated');}
+  else if(message.content.includes('how\'re you')){
+    message.reply('perfectly coded, badly indentated');}
+     else if(message.content.includes('who\'re you')){
+    message.reply('I\'m a perfectly coded, badly indentated bot');}
+    else if(message.content.includes('who are you')){
+    message.reply('I\'m a perfectly coded, badly indentated bot');}
+   else {
+    message.reply('I\'m a bot, You\'d think I\'d get that?');
+
+   }
+}
+});
 
 //----------------------------NEW CONTEST--------------------------------------------------------
 
@@ -610,13 +692,13 @@ client.on('message', message => {
             if (message.channel.name !== 'random')
                 message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
             else
-                message.reply('don\'t insult bhadwe, I\'m more productive than you');
+                message.reply('don\'t insult, I\'m more productive than you');
 
         else if (message.content.includes('sup')) {
             message.reply('fan');
         }
         else if (message.content.includes('hi')) {
-            message.reply('Hi nibba');
+            message.reply('Hello!');
         }
         else if (message.content.includes('what\'s up')) {
             message.reply('ceiling');
@@ -645,8 +727,6 @@ client.on('message', message => {
         }
     }
 });
-
-
 
 
 client.login(auth.token);
