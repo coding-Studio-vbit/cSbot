@@ -1,6 +1,7 @@
 # cSbot
 Whenever an update is made to bot.js file, contact Executive so that he can push the file to heroku.
 
+
 And also, keep the version up to date.
 
 The custom convention we follow: x.x.y
