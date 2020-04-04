@@ -145,7 +145,6 @@ client.on('message', message => {
         }
 
     }
-
 });
 
 //hiiii
@@ -233,11 +232,34 @@ else if(message.content.includes('lame')){
 
 
 client.on('message', message => {
-    if (message.content === '!newcontest') {
-        var ff = cf.contest.list({ gym: 'false' }, function (err, data) {
+   if (message.content === '!newcontest') {
+    var ff = cf.contest.list({ gym: 'false' },function (err, data) {
+     
+        if (err) {
+            console.log("Error bruh"); 
+        } 
+        var flag = 1;
+        var i = 0;
+        var fff;
+        var finalarr = [];
+        console.log(data[i].startTimeSeconds);
+        // if(data.phase)
+        while(flag){
+            var chillar = [];
+            if(data[i].phase === 'BEFORE'){
+                chillar.push(data[i].name);
 
-            if (err) {
-                console.log("Error bruh");
+                let today = new Date();
+                var epoch = moment(today).unix();
+                fff = data[i].startTimeSeconds - epoch;
+                startDate = to_human(fff);
+                chillar.push(startDate);
+
+                duration = to_human(data[i].durationSeconds);
+                chillar.push(duration);
+                chillar.push(data[i].id);
+
+                finalarr.push(chillar);
             }
             var flag = 1;
             var i = 0;
