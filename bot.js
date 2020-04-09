@@ -97,16 +97,16 @@ client.on('message', message => {
     else if (message.content.startsWith('!getproblem')) {
         prefix = '!getproblem'
         const arg = message.content.slice(prefix.length).split(' ');
-        let finalmsg = '';
-        if((arg[1] > '1' || arg[1] < '1159') && (arg[2] === 'a' || arg[2] === 'b' || arg[2] === 'c' || arg[2] === 'd' || arg[2] === 'e'))
+        let finalmsg = ''; 
+        if((arg[1] > '1' || arg[1] < '1159') && ['a','b','c','d','e'].includes(arg[2]))
             message.channel.send(`\nHere's the link to the problem you requested. Happy Solving!\nhttp://codeforces.com/problemset/problem/${arg[1]}/${arg[2].toUpperCase()}/`);
         else
             message.channel.send("Such problem does not exist. WTH, is u drunk? Try again.");    
     }
-    else if(message.content.startsWith('!xdd')){
-        var role = message.guild.roles.find(role => role.name === "team-alpha");
-        message.member.addRole(role);
-        console.log("alpha added")
+    //else if(message.content.startsWith('!xdd')){
+    //    var role = message.guild.roles.find(role => role.name === "team-alpha");
+    //    message.member.addRole(role);
+    //    console.log("alpha added")
     }
 
 //---------------------------------------------------Tech News-----------------------------------------------------------
