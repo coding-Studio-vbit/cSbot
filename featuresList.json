@@ -1,0 +1,50 @@
+[
+    {
+        "name" : "intro",
+        "description": "Gives an intro"
+    },
+    {
+        "name" : "cfboard",
+        "description": "Codeforces Rating Leaderboard"
+    },
+    {
+        "name" : "getproblem",
+        "description": "Can be used to get the CF link to a problem (Ex: !getproblem 122 A)"
+    },
+    {
+        "name" : "newproblem",
+        "description": "Can be used to get a random problem of chosen difficulty (Ex: !newproblem B)"
+    },
+    {
+        "name" : "xtreme",
+        "description": "Can be used to give a random problem of chosen difficulty to a random person (Ex: !xtreme B)"
+    },
+    {
+        "name" : "newcontest",
+        "description": "Gives info about the latest codeforces contest"
+    },
+    {
+        "name" : "remindme",
+        "description": "Gives you a reminder after the said time. (Ex: !remindme 2 hours Eat food)"
+    },
+    {
+        "name" : "roast",
+        "description": "Roast someone on the server"
+    },
+    {
+        "name" : "payrespects",
+        "description": "Tag a member to pay him respects"
+    },
+    {
+        "name" : "insult",
+        "description": "Insult yourself for the heck of it"
+    },
+    {
+        "name" : "myavatar",
+        "description": "Image of your avatar (why do you even need this?)"
+    },
+    {
+        "name" : "techtoday",
+        "description": "Top news in the Tech world today (beta)"
+    }
+]
