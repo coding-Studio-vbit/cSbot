@@ -283,21 +283,6 @@ client.on('message', message => {
                     }
                 })
             }
-            // Gay R8 machine
-            else if (message.content.startsWith('!howgay')) {
-                var rate = getRandomInt(101);
-                message.channel.send(`${user}`);
-                var flag = '';
-                for (var i = 0; i < Math.floor(rate / 20); i++) {
-                    flag += ':rainbow_flag: ';
-                }
-                const gayR8 = new Discord.RichEmbed()
-                    .setColor('#eb2fde')
-                    .setTitle('Gay R8 Machine')
-                    .addField('Calculated Results:', `${rate}% gay :flushed:`, true)
-                    .setDescription(flag)
-                message.channel.send(gayR8);
-            }
         }
     }
 });
@@ -363,7 +348,7 @@ client.on('message', message=> {
 
 //-----------------------------------functions--------------------------------------------------------------
 getIntroReply = () => {
-    let reply = "Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v1.5.2**\n----------------------------------------------------\n" 
+    let reply = "Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v1.5.1**\n----------------------------------------------------\n" 
     for(let i =0; i<featuresList.length; i++) {
         feature = featuresList[i]
         reply = reply + `\`${feature.name}\`    :   \`${feature.description}\`\n`
