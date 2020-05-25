@@ -107,7 +107,6 @@ client.on('message', message => {
     //    var role = message.guild.roles.find(role => role.name === "team-alpha");
     //    message.member.addRole(role);
     //    console.log("alpha added")
-    }
 
 //---------------------------------------------------Tech News-----------------------------------------------------------
 
@@ -244,10 +243,66 @@ client.on('message', message => {
     }
   }
 });
+
+//========================================= MEMES ==================================================================
+
+client.on('message', message => {
+    if (!message.guild) return;
+    const user = message.mentions.users.first();
+    // Mock text without mentioning user.
+    if (user === undefined) {
+        if (message.content.startsWith('!mock')) {
+            var msg = message.content;
+            msg = msg.slice(6);
+            const mock = new Discord.RichEmbed()
+                .setColor('#eb2fde')
+                .setTitle('Mock Machine')
+                .setDescription(textMocker(msg))
+                .setImage('https://i.imgur.com/pukl0DL.gif')
+            message.channel.send(mock);
+        }
+    }
+    else if (user.username) {
+        const member = message.guild.member(user);
+        // Mock text of mentioned user's last message.
+        if (member) {
+            if (message.content.startsWith('!mock')) {
+                message.channel.fetchMessages({ limit: 10 }).then(messages => {
+                    msg = Array.from(messages);
+                    for (var i = 0; i < 10; i++) {
+                        if (msg[i][1].author.username == user.username && !msg[i][1].content.startsWith("!")) {
+                            message.channel.send(`${user}`);
+                            const userMock = new Discord.RichEmbed()
+                                .setColor('#eb2fde')
+                                .setTitle('Mock Machine')
+                                .setDescription(textMocker(msg[i][1].content))
+                                .setImage('https://i.imgur.com/pukl0DL.gif')
+                            message.channel.send(userMock);
+                            break;
+                        }
+                    }
+                })
+            }
+            // Gay R8 machine
+            else if (message.content.startsWith('!howgay')) {
+                var rate = getRandomInt(101);
+                message.channel.send(`${user}`);
+                var flag = '';
+                for (var i = 0; i < Math.floor(rate / 20); i++) {
+                    flag += ':rainbow_flag: ';
+                }
+                const gayR8 = new Discord.RichEmbed()
+                    .setColor('#eb2fde')
+                    .setTitle('Gay R8 Machine')
+                    .addField('Calculated Results:', `${rate}% gay :flushed:`, true)
+                    .setDescription(flag)
+                message.channel.send(gayR8);
+            }
+        }
+    }
+});
+
 //=========================================Conversation===========================================
-
-
-
 
 client.on('message', message=> {
     message.content=message.content.toLowerCase();
@@ -308,7 +363,7 @@ client.on('message', message=> {
 
 //-----------------------------------functions--------------------------------------------------------------
 getIntroReply = () => {
-    let reply = "Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v1.5.0**\n----------------------------------------------------\n" 
+    let reply = "Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v1.5.2**\n----------------------------------------------------\n" 
     for(let i =0; i<featuresList.length; i++) {
         feature = featuresList[i]
         reply = reply + `\`${feature.name}\`    :   \`${feature.description}\`\n`
@@ -444,6 +499,37 @@ insultedBot = (msgContent) => {
         if(msgContent.includes(botInsults[i])) return true
     }
     return false
+}
+
+// Function that returns a mockified version of the input string passed to it.
+textMocker = (message) => {
+    let newWord = '';
+    const word = message;
+    let upperNum = 0;
+    const mid = 0.5;
+    for (var i = 0; i < word.length; i++) {
+        if (word[i] === ' ') {
+            newWord += word[i];
+            continue;
+        }
+        let diff = Math.pow(mid, Math.abs(upperNum));
+        let num = mid;
+        if (upperNum >= 0) {
+            num = 1 - diff;
+        } else {
+            num = diff;
+        }
+        const rand = Math.random();
+        const isUpper = rand > num;
+        upperNum += isUpper ? 1 : -1;
+        newWord += (isUpper) ? word[i].toUpperCase() : word[i].toLowerCase();
+    }
+    return newWord;
+}
+
+// Function that returns a random number from 0 to max-1 (both inclusive)
+getRandomInt = (max) => {
+    return Math.floor(Math.random() * Math.floor(max));
 }
 
 client.login(auth.token);
