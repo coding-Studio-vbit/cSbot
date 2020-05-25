@@ -32,6 +32,14 @@
         "description": "Roast someone on the server"
     },
     {
+        "name" : "mock",
+        "description" : "Can be used to mock some specific text (Ex. !mock <text>) or the last message of the mentioned user (Ex. !mock @user)"
+    },
+    {
+        "name" : "howgay",
+        "description" : "Accurately calculates the percentage of gayness of the mentioned user using a Chinese supercomputer (and sends that user's data to the Chinese Government)"
+    },
+    {
         "name" : "payrespects",
         "description": "Tag a member to pay him respects"
     },
