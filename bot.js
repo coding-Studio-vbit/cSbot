@@ -107,7 +107,6 @@ client.on('message', message => {
     //    var role = message.guild.roles.find(role => role.name === "team-alpha");
     //    message.member.addRole(role);
     //    console.log("alpha added")
-    }
 
 //---------------------------------------------------Tech News-----------------------------------------------------------
 
