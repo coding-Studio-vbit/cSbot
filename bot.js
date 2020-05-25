@@ -363,7 +363,7 @@ client.on('message', message=> {
 
 //-----------------------------------functions--------------------------------------------------------------
 getIntroReply = () => {
-    let reply = "Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v1.5.0**\n----------------------------------------------------\n" 
+    let reply = "Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v1.5.2**\n----------------------------------------------------\n" 
     for(let i =0; i<featuresList.length; i++) {
         feature = featuresList[i]
         reply = reply + `\`${feature.name}\`    :   \`${feature.description}\`\n`
