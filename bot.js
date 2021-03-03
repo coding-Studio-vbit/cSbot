@@ -27,7 +27,6 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
 //----------------------------INTRO--------------------------------------------------------
 client.on('message', message => {
     message.content = message.content.toLowerCase();
@@ -227,16 +226,16 @@ client.on('message', message => {
     }
     else if (user) {
       
-      const member = message.guild.member(user);
-      
-      if (member) {
+    //   let member = message.guild.member(user);
+    //   console.log(member)
+      if (user.id !== '488294786210594826') {
         console.log(user);
         message.channel.send(` ${user} `+ roasts.list[randi]).catch(err => {
           message.channel.send('I was unable to roast the member');
           console.error(err);
         });
       } else {
-        message.channel.send('That user isn\'t in this guild!');
+        message.channel.send('Can\'t roast my master');
       }
     } else {
       message.channel.send('You didn\'t mention the user to roast!');
@@ -518,3 +517,4 @@ getRandomInt = (max) => {
 }
 
 client.login(auth.token);
+//work pls
