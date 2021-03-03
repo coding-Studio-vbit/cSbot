@@ -353,7 +353,7 @@ getIntroReply = () => {
         feature = featuresList[i]
         reply = reply + `\`${feature.name}\`    :   \`${feature.description}\`\n`
     }
-    return reply
+    return reply + '\nCreators:\ngithub.com/Saravanan-Jodavula\ngithub.com/akylus\n';
 }
 
 createEmbed = (contest) => {
