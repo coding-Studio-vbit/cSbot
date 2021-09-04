@@ -177,19 +177,6 @@ client.on('message', message => {
     if (message.content === '!myavatar')
         message.channel.send("\n" + message.author.avatarURL);
 
-    else if (message.content === '!enlargepp')
-        if(message.channel.name !== 'random' )
-            message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
-        else
-            message.channel.send("8=============D");
-    
-
-    else if (message.content === '!cum')
-        if(message.channel.name !== 'random')
-            message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
-        else
-            message.channel.send("8=============D :sweat_drops: ");
-
     else if (message.content === '!yay')
         message.channel.send("Yayyy, you did it! :beers: ");
 
@@ -214,14 +201,14 @@ client.on('message', message => {
 
 client.on('message', message => {
   if (!message.guild) return;
-  if (message.content.startsWith('!roast')) {
+  if (message.content.startsWith('!roast'))
+  {
     let randi = Math.floor(Math.random()*(roasts.list.length));
     const user = message.mentions.users.first();
-    if(message.channel.name !== 'random' && message.channel.name !== 'gb-senior-sdes'){
+    if(message.channel.name !== 'random' && message.channel.name !== 'gb-senior-sdes' &&  message.channel.name !== 'bottesting'){
         message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
     }
-
-    if (user == '<@590805821445898260>'){
+    else if (user == '<@648581896242200599>'){
             message.reply("Nice try, but I'm smart.");
     }
     else if (user) {
@@ -268,7 +255,7 @@ client.on('message', message => {
             if (message.content.startsWith('!mock')) {
                 message.channel.fetchMessages({ limit: 10 }).then(messages => {
                     msg = Array.from(messages);
-                    for (var i = 0; i < 10; i++) {
+                    for (var i = 0; i < 50; i++) {
                         if (msg[i][1].author.username == user.username && !msg[i][1].content.startsWith("!")) {
                             message.channel.send(`${user}`);
                             const userMock = new Discord.RichEmbed()
@@ -293,55 +280,48 @@ client.on('message', message=> {
     let prefix = message.content;
     var argm = ["No","Yes"];
     if (message.isMentioned(client.user)) {
-        if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-    if(message.isMentioned(client.user) && message.content.includes('love you'))
-        message.reply('No homo broski');
-
-    else if(
-        message.content.includes('how are you') ||
-        message.content.includes('how r u') ||
-        message.content.includes('how\'re you') ||
-        message.content.includes('how\'re u')
-    )
-        message.reply(', Perfectly coded, badly indentated. :(');
-
-    else if(message.content.includes('who\'re you') || message.content.includes('who are you')){
-        message.reply(' I\'m a perfectly coded, badly indentated bot');}
-
-
-    else if(message.content.includes('?')){
-        iter=Math.floor(Math.random()*2);
-        if(iter==0)
-            message.reply(argm[0]);
-        else 
-            message.reply(argm[1]);
-    }
-
-    else if(insultedBot(message.content))
-        if(message.channel.name !== 'random')
-            message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
-        else
-            message.reply('don\'t insult ass, I\'m more productive than you');
-
-
-    else if(message.content.includes('sup')){
-        message.reply('fan');}
-    else if(message.content.includes('hi')){
-        message.reply('Hi nibba');}
-    else if(message.content.includes('hey')){
-        message.reply('Heyy!!');}
-    else if(message.content.includes('hello')){
-        message.reply('Hello!!');}
-    else if(message.content.includes('hai')){
-        message.reply('Haai!!');}
-    else if(message.content.includes('hoi')){
-        message.reply('Hola!');}
-    else if(message.content.includes('what\'s up')){
-        message.reply('ceiling');}
-    else if(message.content.includes('wassup')){
-        message.reply('sky');}
-    else message.channel.send("...", {files: ["https://imgur.com/8s1YEfH.jpg"]});
+        if (!message.content.startsWith(prefix) || message.author.bot)
+	return;
+    	if(message.isMentioned(client.user) && message.content.includes('love you'))
+    	    message.reply('No homo broski');
+    	else if(
+    	    message.content.includes('how are you') ||
+    	    message.content.includes('how r u') ||
+    	    message.content.includes('how\'re you') ||
+    	    message.content.includes('how\'re u')
+    	)
+    	    message.reply(', Perfectly coded, badly indentated. :(');
+    	else if(message.content.includes('who\'re you') || message.content.includes('who are you')){
+    	    message.reply(' I\'m a perfectly coded, badly indentated bot');}
+    	else if(message.content.includes('?')){
+    	    iter=Math.floor(Math.random()*2);
+    	    if(iter==0)
+    	        message.reply(argm[0]);
+    	    else 
+    	        message.reply(argm[1]);
+    	}
+    	else if(insultedBot(message.content))
+    	    if(message.channel.name !== 'random' || message.channel.name != 'bottesting')
+    	        message.channel.send("Um, I'm sorry. But kindly refrain such stuff to #random");
+    	    else
+    	        message.reply('don\'t insult ass, I\'m more productive than you');
+    	else if(message.content.includes('sup')){
+    	    message.reply('fan');}
+    	else if(message.content.includes('hi')){
+    	    message.reply('Hi there!');}
+    	else if(message.content.includes('hey')){
+    	    message.reply('Heyy!!');}
+    	else if(message.content.includes('hello')){
+    	    message.reply('Hello!!');}
+    	else if(message.content.includes('hai')){
+    	    message.reply('Haai!!');}
+    	else if(message.content.includes('hoi')){
+    	    message.reply('Hola!');}
+    	else if(message.content.includes('what\'s up')){
+    	    message.reply('ceiling');}
+    	else if(message.content.includes('wassup')){
+    	    message.reply('sky');}
+    	else if(!message.content.startsWith("!roast")) message.channel.send("...", {files: ["https://imgur.com/8s1YEfH.jpg"]});
     }
 });
 
@@ -350,9 +330,9 @@ getIntroReply = () => {
     let reply = "Hey there! I\'m the Bot for coding.Studio(); \n----------------------------------------------------\n**Ver: v1.5.1**\n----------------------------------------------------\n" 
     for(let i =0; i<featuresList.length; i++) {
         feature = featuresList[i]
-        reply = reply + `\`${feature.name}\`    :   \`${feature.description}\`\n`
+        reply = reply + `> \`${feature.name}\`    :   \`${feature.description}\`\n`
     }
-    return reply
+    return reply + "> \n `Bot Creators:\nSaravanan - github.com/Saravanan-Jodavula\nKausthub - github.com/akylus`";
 }
 
 createEmbed = (contest) => {
