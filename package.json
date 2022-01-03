@@ -1,9 +1,12 @@
 {
   "name": "A.L.A.N.",
-  "version": "2.3.5",
+  "version": "2.1.5",
   "description": "Cute bot for coding.Studio();",
   "main": "bot.js",
   "author": "Akylus",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
     "codeforces-api": "^1.0.3",
     "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
